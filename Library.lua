@@ -28,7 +28,7 @@ function meta.Disable(ESPType)
             v = {}
         end
     end
-
+    print("Disabled")
     return
 
 end
@@ -42,9 +42,11 @@ function makeNewBoxHandler(Type, obj)
     newBox.Transparency = 0
     newBox.ZIndex = 100000
     table.insert(activeESP[Type], newBox)
+    print("Made ESP")
 end
 
 function meta.APIEnabled(ESPType, obj)
+    print("Kasma was here")
 
     --[[
         Types:
