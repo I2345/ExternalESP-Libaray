@@ -34,7 +34,7 @@ function meta.Disable(ESPType)
 end
 
 function makeNewBoxHandler(Type, obj)
-    local newBox = Instance.new("BoxHandleAdornment")
+    local newBox = Instance.new("BoxHandleAdornment", obj)
     newBox.Adornee = obj
     newBox.AlwaysOnTop = true
     newBox.Size = obj.Size
