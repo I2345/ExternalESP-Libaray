@@ -1,0 +1,28 @@
+
+
+API Documentation!
+
+
+ESPLIB.APIEnabled(Type <string>, obj <instance>)
+
+The Types could be:
+"Perm"
+"Players"
+"Objects"
+
+these are to seperate players and objects for better ESP Managment
+Perm can not be deleted! Be careful what you put here(they can if you go into the game files and manually delete it via DarkDex.
+
+ESPLIB.Disable(Type <string>)
+
+This can delete all ESP's in a certain group aka I would like to destroy all Object ESP's ill do ESPLIB.Disable("Objects")
+
+Example of Code
+
+local ESP_Lib = loadstring(game:HttpGet(""))()
+
+ESP_Lib.APIEnabled("Objects", game.Workspace.Baseplate)
+
+task.wait(1)
+
+ESP_Lib.Disable("Objects")
