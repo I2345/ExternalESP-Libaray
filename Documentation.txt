@@ -19,7 +19,7 @@ This can delete all ESP's in a certain group aka I would like to destroy all Obj
 
 Example of Code
 
-local ESP_Lib = loadstring(game:HttpGet(""))()
+local ESP_Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/I2345/ExternalESP-Libaray/main/Library.lua"))()
 
 ESP_Lib.APIEnabled("Objects", game.Workspace.Baseplate)
 
