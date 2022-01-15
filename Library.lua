@@ -1,3 +1,5 @@
+local StarterPack = game:GetService("StarterPack")
+local a = math.random(0,1000)
 local activeESP = {
     ["players"] = {
 
@@ -7,6 +9,9 @@ local activeESP = {
 
     };
 
+    ["perm-"..tostring(a)] = {
+
+    }
     
 }
 
@@ -20,12 +25,9 @@ local meta = {}
 
 function meta.Disable(ESPType)
 
-    for i,v in pairs(activeESP) do
-        if i == string.lower(ESPType) then
-            for a,e in pairs(v) do
-                e:Destroy()
-            end
-            v = {}
+    if activeESP[ESPType] then
+        for i,v in pairs(activeESP[ESPType]) do
+            v:Destroy()
         end
     end
     print("Disabled")
@@ -39,24 +41,29 @@ function makeNewBoxHandler(Type, obj)
     newBox.AlwaysOnTop = true
     newBox.Size = obj.Size
     newBox.Visible = true
-    newBox.Transparency = 0
-    newBox.ZIndex = 100000
+    newBox.Transparency = 0.5
+    newBox.ZIndex = 4
     table.insert(activeESP[Type], newBox)
     print("Made ESP")
 end
 
 function meta.APIEnabled(ESPType, obj)
-    print("Kasma was here")
+    print("Kasma#7351 was here")
 
     --[[
         Types:
         - players
         - objects
+        - perm
     ]]
 
     if activeESP[string.lower(ESPType)] then
 
         makeNewBoxHandler(string.lower(ESPType), obj)
+
+    elseif "perm" == string.lower(ESPType) then
+    
+        makeNewBoxHandler("perm-"..tostring(a), obj)
 
     end
 
